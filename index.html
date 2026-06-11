@@ -1,9 +1,336 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="ko">
   <head>
-    
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="title" content="꽃나무 - 이상" />
+    <meta
+      name="description"
+      content="이상의 시 '꽃나무'를 담은 반응형 웹 페이지. 순바탕체 적용."
+    />
+    <title>꽃나무 · 이상</title>
+
+    <style>
+      @font-face {
+        font-family: "SunBatang";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Light.woff")
+          format("woff");
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "SunBatang";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Medium.woff")
+          format("woff");
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: "SunBatang";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Bold.woff")
+          format("woff");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "SunBatang", serif;
+        font-weight: 300;
+        color: #2c2620;
+        background-color: #efe7d7;
+        background-image: linear-gradient(180deg, #f7f3ea 0%, #efe7d7 100%);
+        background-repeat: no-repeat;
+        line-height: 1.9;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      #header {
+        text-align: center;
+        padding: 28px 24px 34px;
+        margin-bottom: 36px;
+        border-bottom: 1px solid #d8cdb8;
+      }
+
+      #wrap {
+        width: 960px;
+        margin: 0 auto;
+        padding: 40px 0 60px;
+        overflow: hidden;
+        margin-bottom: 36px;
+        border-bottom: 1px solid #d8cdb8;
+      }
+
+      #header .eyebrow {
+        font-size: 14px;
+        letter-spacing: 0.5em;
+        color: #8c3b2e;
+        font-weight: 500;
+      }
+
+      #menu {
+        display: block;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #d8cdb8;
+      }
+
+      #header h1 {
+        font-size: 56px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        margin: 14px 0 8px;
+      }
+
+      #section h2 {
+        text-align: center;
+      }
+
+      #section .poem {
+        font-size: 22px;
+        text-align: center;
+      }
+
+      #section .signature {
+        text-align: right;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+
+      /* 노트북 & 태블릿 가로: 1024px - 1279px */
+      @media screen and (min-width: 1024px) and (max-width: 1279px) {
+        #wrap {
+          width: 900px;
+          padding: 36px 0 56px;
+        }
+
+        #menu {
+          width: 100%;
+          font-size: 16px;
+        }
+
+        #section {
+          width: 62%;
+          padding: 34px 36px;
+        }
+
+        #header {
+          padding: 26px 24px 32px;
+          margin-bottom: 34px;
+        }
+
+        #header h1 {
+          font-size: 52px;
+        }
+
+        #header .eyebrow {
+          font-size: 13px;
+          letter-spacing: 0.45em;
+        }
+
+        #section .poem p {
+          font-size: 18px;
+        }
+      }
+
+      /* 태블릿 가로: 769px - 1023px */
+      @media screen and (min-width: 769px) and (max-width: 1023px) {
+        #wrap {
+          width: auto;
+          padding: 32px 28px 52px;
+        }
+
+        #menu {
+          width: 36%;
+          font-size: 16px;
+        }
+
+        #section {
+          width: 60%;
+          padding: 32px 30px;
+        }
+
+        #header {
+          padding: 24px 20px 30px;
+          margin-bottom: 32px;
+        }
+
+        #header h1 {
+          font-size: 48px;
+        }
+
+        #header .eyebrow {
+          font-size: 13px;
+          letter-spacing: 0.4em;
+        }
+
+        #section h2 {
+          font-size: 22px;
+        }
+
+        #section .poem p {
+          font-size: 18px;
+          line-height: 2;
+        }
+      }
+
+      /* 모바일 가로 & 태블릿 세로: 480px - 767px */
+      @media screen and (min-width: 480px) and (max-width: 767px) {
+        #wrap {
+          width: auto;
+          padding: 24px 20px 44px;
+        }
+
+        #menu {
+          float: none;
+          width: auto;
+          margin-bottom: 28px;
+          font-size: 15px;
+        }
+
+        #section {
+          float: none;
+          width: auto;
+          padding: 28px 24px;
+        }
+
+        #header {
+          padding: 22px 16px 28px;
+          margin-bottom: 28px;
+        }
+
+        #header h1 {
+          font-size: 42px;
+          letter-spacing: 0.12em;
+        }
+
+        #header .eyebrow {
+          font-size: 12px;
+          letter-spacing: 0.32em;
+        }
+
+        #section h2 {
+          font-size: 21px;
+          letter-spacing: 0.2em;
+        }
+
+        #section .poem p {
+          font-size: 17px;
+          line-height: 2.05;
+        }
+      }
+
+      /* 모바일: 0px - 479px */
+      @media screen and (max-width: 479px) {
+        #wrap {
+          width: auto;
+          padding: 20px 14px 38px;
+        }
+
+        #menu {
+          float: none;
+          width: auto;
+          margin-bottom: 24px;
+          font-size: 14px;
+          line-height: 1.8;
+        }
+
+        #section {
+          float: none;
+          width: auto;
+          padding: 24px 18px;
+        }
+
+        #header {
+          padding: 18px 12px 24px;
+          margin-bottom: 24px;
+        }
+
+        #header h1 {
+          font-size: 36px;
+          letter-spacing: 0.1em;
+        }
+
+        #header .eyebrow {
+          font-size: 11px;
+          letter-spacing: 0.24em;
+        }
+
+        #section h2 {
+          font-size: 19px;
+          letter-spacing: 0.16em;
+        }
+
+        #section .poem p {
+          font-size: 16px;
+          line-height: 2.05;
+        }
+
+        .signature {
+          font-size: 15px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h1>안녕하세요.</h1>
+    <div id="wrap">
+      <div id="header">
+        <h1>꽃나무</h1>
+        <p class="eyebrow">지은이 - 이상 (李箱)</p>
+      </div>
+
+      <div id="menu">
+        <ul>
+          <li><b>지은이:</b>&nbsp이상 (李箱)</li>
+          <br />
+          <li><b>본명:</b>&nbsp김해경 (金海卿)</li>
+          <br />
+          <li><b>발표:</b>&nbsp1933년</li>
+          <br />
+          <li><b>수록:</b>&nbsp『가톨릭청년』</li>
+          <br />
+          <li><b>갈래:</b>&nbsp자유시 · 상징시</li>
+          <br />
+        </ul>
+      </div>
+
+      <div id="section">
+        <h2><꽃 나 무></h2>
+        <br />
+        <div class="poem">
+          <p>벌판한복판에꽃나무하나가있소.</p>
+          <p>근처(近處)에는꽃나무가하나도없소.</p>
+          <p>
+            꽃나무는제가생각하는꽃나무를열심(熱心)으로생각하는것처럼열심으로꽃을피워가지고섰소.
+          </p>
+          <p>꽃나무는제가생각하는꽃나무에게갈수없소.</p>
+          <p>나는막달아났소.</p>
+          <p>
+            한꽃나무를위(爲)하여그러는것처럼나는참그런이상스러운흉내를내었소.
+          </p>
+        </div>
+        <br />
+        <p class="signature">― 이상</p>
+      </div>
+    </div>
   </body>
 </html>
+
